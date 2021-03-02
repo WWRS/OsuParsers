@@ -22,10 +22,10 @@ namespace OsuParsers.Helpers
             var sampleSet = (int)timingPoint.SampleSet;
             var sampleIndex = timingPoint.CustomSampleSet;
             var volume = timingPoint.Volume;
-            var inherited = timingPoint.Inherited.ToInt32();
+            var uninherited = !(timingPoint.Inherited).ToInt32();
             var effects = (int)timingPoint.Effects;
 
-            return $"{offset},{msPerBeat},{meter},{sampleSet},{sampleIndex},{volume},{inherited},{effects}";
+            return $"{offset},{msPerBeat},{meter},{sampleSet},{sampleIndex},{volume},{uninherited},{effects}";
         }
 
         public static string Colour(Color colour)
